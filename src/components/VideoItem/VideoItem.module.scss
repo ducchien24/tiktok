@@ -1,0 +1,190 @@
+// Video
+.video-wrapper {
+    --width-video-default : 290px;
+    --width-baret-default :3px;
+    --height-video-default : 518px;
+    --height-baret-default : 30px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 16px;
+}
+
+.video-card {
+    position: relative;
+    width: var(--width-video-default);
+    height: var(--height-video-default);
+    background-color: #1618230f;
+    border-radius: 8px;
+    margin-right: 20px;
+    overflow: hidden;
+    cursor: pointer; 
+    video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        .controls {
+            display: block;
+        }
+    }
+    
+}
+
+.auto-play-video {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+}
+
+.controls {
+    display: none;
+    animation: easeView .3s ease 0s ;
+    &:focus-within {
+        display: block!important;
+    }
+}
+
+.control-play {
+    position: absolute;
+    left: 12px;
+    bottom: 26px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    color: var(--white);
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    &:focus {
+        color: red;
+    }
+}
+
+.voice-control {
+    position: absolute;
+    right:  12px;
+    bottom: 26px;
+
+    &:hover {
+        .volume-control {
+            display: flex;
+        }
+    }
+    &:focus-within {
+        .volume-control {
+            display: flex;
+        }
+    }
+}
+
+.video-sound {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    color: var(--white);
+    
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+
+   
+}
+
+.volume-control {
+    position: relative;
+    display: none;
+    justify-content: center;
+    // align-items: center;
+    width: 24px;
+    height: 64px;
+    margin: 8px 7px 0;
+    background-color: #16182357;
+    border-radius: 32px;
+    cursor: default;
+}
+
+.control-progess {
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.control-baret {
+    height: 48px;
+    transform: scaleY(0);
+    transform-origin: center bottom;
+}
+.control-circle {
+    position: absolute;
+    bottom: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.control-progess , .control-baret {
+    position: absolute;
+    width: var(--width-baret-default);
+    cursor: pointer;
+    bottom: 8px;
+}
+.control-baret , .control-circle {
+    background-color: #fff;
+}
+
+// Video - action - items
+
+.action-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-action {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    width: 48px;
+    height: 48px;
+    margin: 8px 0 6px;
+    background-color: #1618230f;
+    font-size: 0rem;
+    border-radius: 50%;
+    transition: all 200ms ease-in-out 0s;
+    cursor: pointer;
+}
+
+.strong-text {
+    color: #161823bf;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-align: center;
+}
+
+// set keyframes
+@keyframes easeView {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

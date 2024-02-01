@@ -1,0 +1,105 @@
+//Search
+.search,
+.search-result {
+    width: 415px;
+}
+
+.search-title {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+}
+.search {
+    position: relative;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    background: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-boder-radius);
+    box-shadow: 0 1px 2px rgba(0 0 0 / 12%);
+    border: 1px solid transparent;
+    pointer-events: none; /*phần tử này sẽ bị mất điểm con trỏ sự kiện 
+    (remind : con trỏ là trỏ chuột mouse bàn phím khi chuột action vào phần tử này
+    sẽ không kích hoạt) */
+    input {
+        flex: 1;
+        line-height: 21px;
+        font-size: 1.6rem;
+        padding-right: 40px;
+        font-weight: 400;
+        color: var(--text-color);
+        border: none;
+        background-color: transparent;
+        caret-color: rgba(254, 44, 85, 1); /* nhấp nháy màu đỏ khi focus */
+        pointer-events: auto; /* phần tử này sẽ có con trỏ sự kiện và khi 
+        mouse action tại phần tử này - phần tử cha nó sẽ kích hoạt sự kiện tương ứng */
+    }
+
+    &:focus-within,
+    &:has(.search-btn:hover),
+    &:hover {
+        border-color: rgb(197 198 201);
+    }
+
+    input:hover ~ .search-btn,
+    .search-btn:hover {
+        background-color: rgba(22, 24, 35, 0.06);
+        color: rgb(22, 24, 35) !important;
+    }
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
+}
+
+.clear,
+.loading {
+    // cursor: pointer;
+    pointer-events: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(var(--search-button-width) + 16px);
+    color: rgba(22, 24, 35, 0.34);
+}
+.loading {
+    animation: var(--spindleAnimation)
+}
+// @keyframes spindle {
+//     0% {
+//         transform: translateY(-50%) rotate(0);
+//     }
+//     100% {
+//         transform: translateY(-50%) rotate(360deg);
+//     }
+// }
+.search-btn {
+    pointer-events: auto;
+    width: var(--search-button-width);
+    height: 100%;
+    border-radius: 0 var(--search-boder-radius) var(--search-boder-radius) 0;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        // display: block;
+        margin-left: -1px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        height: 61%;
+        width: 1px;
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+    svg {
+        position: relative;
+        left: -3px;
+    }
+}

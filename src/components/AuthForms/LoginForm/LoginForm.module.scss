@@ -1,0 +1,86 @@
+.spinner-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    svg {
+        width: 40px;
+        height: 40px;
+        animation: var(--spindleAnimation);
+    }
+}
+
+
+.title {
+    color: var(--text-color);
+    font-family: 'TikTokDisplayFont';
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 16px 0;
+    text-align: center;
+}
+
+.content {
+    --height: 44px;
+}
+
+.form {
+    position: relative;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.form-mess--err {
+    color: var(--primary);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin-bottom: 4px;
+}
+.target-link {
+    color: #161823bf;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline currentColor;
+    }
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    height: var(--height);
+    padding-left: 12px;
+    margin-bottom: 8px;
+    background-color: rgba(22, 24, 35, 0.06);
+    caret-color: var(--primary);
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    border-radius: 2px;
+}
+
+.show-pass {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translateY(calc(-4px - 50%));
+    right: 12px;
+}
+
+.login-btn {
+    margin-top: 18px;
+    height: var(--height);
+    width: 100%;
+}

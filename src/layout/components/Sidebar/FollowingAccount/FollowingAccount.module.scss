@@ -1,0 +1,67 @@
+.following-accounts {
+    border-top: 1px solid #1618231f;
+    padding: 16px 0;
+}
+
+.title {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #161823bf;
+}
+
+.account-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin-left: -6px;
+    transition: background-color 200ms ease-in-out 0s;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+        background-color: #16182308;
+    }
+}
+
+.account-avt {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.account-info {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.full-name {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.1rem;
+}
+
+.account-tick {
+    margin-left: 4px;
+    color: #20d5ec;
+}
+
+.nick-name {
+    color: #161823bf;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.more-btn {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.8rem;
+    margin-top: 8px;
+    // padding: 8px;
+    color: #fe2c55;
+    cursor: pointer;
+}

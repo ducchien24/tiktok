@@ -1,0 +1,12 @@
+.wrapper {
+    padding-top: 48px;
+    height: var(--modal-max-height);
+    width: var(--modal-max-width);
+}
+.container {
+       // width: 403px;
+       padding: 0 48px;
+       max-height: 408px;
+       // margin: auto;
+       overflow-y: auto;
+}
