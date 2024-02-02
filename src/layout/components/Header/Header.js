@@ -28,10 +28,9 @@ import { InBoxIcon, MessageIcon, UpLoadIcon } from '~/components/Icons';
 
 import images from '~/assets/images';
 import styles from './Header.module.scss';
-// config 
+// config
 import { routes as routesConfig } from '~/configs';
 import { LoginContext } from '~/components/LoginProvider/LoginProvider';
-
 
 const cx = classNames.bind(styles);
 
@@ -119,13 +118,13 @@ function Header() {
             icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
             title: 'Log out',
             // to: 'logout',
-            type:'logout',
+            type: 'logout',
             separate: true,
         },
     ];
     const modalContext = useContext(ModalContext);
     const { data } = useContext(LoginContext);
-    
+
     const currentUser = data;
 
     // Handle events
@@ -134,7 +133,7 @@ function Header() {
             case 'language':
                 // console.log('language')
                 break;
-            case 'logout' :
+            case 'logout':
                 modalContext.handleOpenModal('logout');
                 break;
             default:
@@ -181,7 +180,11 @@ function Header() {
                             <Button text>Upload</Button>
                             <Button
                                 primary
-                                onClick={() => modalContext.handleOpenModal('login-register')}
+                                onClick={() =>
+                                    modalContext.handleOpenModal(
+                                        'login-register',
+                                    )
+                                }
                             >
                                 Login
                             </Button>
